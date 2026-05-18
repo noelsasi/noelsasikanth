@@ -20,6 +20,9 @@
           <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
           <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html#experience">Experience</a></li>
@@ -46,7 +49,7 @@
     <div class="journal-body">
 
       <p>
-        Two years. Five projects. Four clients across three different domains — fashion, fintech,
+        Two years. Five projects. Multiple clients across three different domains — fashion, fintech,
         and enterprise HR. This is where I stopped learning React and started really knowing it.
         The difference is hard to describe until you've crossed it: you stop thinking about
         how to do things in React and start thinking about what you're building.
@@ -127,6 +130,24 @@
         is the fastest way to learn to read the guidelines carefully.
       </p>
 
+      <h3>Backend and Infrastructure</h3>
+
+      <p>
+        The fashion platform and the NeoCash Insta journey both had significant backend components.
+        I built and deployed serverless microservices on <strong>AWS Lambda</strong> — on-demand compute
+        that scaled with usage and eliminated the cost of always-on servers. Migrated the Insta Journey
+        platform to <strong>AWS Amplify</strong> from its legacy deployment, cutting deployment time by 50%
+        and backend operational costs by 50%.
+      </p>
+
+      <p>
+        The merchant dashboards needed real-time insights: inventory levels, order volumes, payment
+        statuses, stock-out predictions. Building that required Node.js APIs that aggregated data
+        cleanly and served it fast enough for dashboards refreshing on demand. These weren't just
+        frontend projects — they were full-stack systems where the API contract and database design
+        mattered as much as the UI.
+      </p>
+
       <h3>Working in a Multi-Client Studio</h3>
 
       <p>
@@ -143,7 +164,7 @@
       </p>
 
       <div class="journal-tech-note">
-        <p><strong>Stack:</strong> React · TypeScript · Redux · GraphQL · Next.js · Tailwind CSS · Material UI · React Native · MobX · Firebase · One Signal · AWS Lambda · AWS Amplify</p>
+        <p><strong>Stack:</strong> React · TypeScript · Redux · GraphQL · Next.js · Node.js · AWS Lambda · AWS Amplify · React Native · MobX · Firebase · One Signal · Tailwind CSS · Material UI</p>
       </div>
 
       <div class="journal-footer-nav">

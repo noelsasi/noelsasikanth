@@ -716,6 +716,10 @@ nav .container {
 .skill-group:first-child { border-top: 1px solid var(--border); }
 .skill-group:last-child { border-bottom: none; }
 
+/* Remove bottom border from last item in every bordered list */
+.timeline > *:last-child { border-bottom: none; }
+.edu-list > *:last-child  { border-bottom: none; }
+
 .skill-group.visible {
   opacity: 1;
   transform: translateY(0);

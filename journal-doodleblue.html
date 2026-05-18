@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Where React Became Second Nature — Doodleblue · Noel Sasikanth</title>
+  <meta name="description" content="Two years, five projects, multiple domains. TypeScript, GraphQL, React Native, App Store and Play Store — this is where things clicked." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="container">
+      <a href="index.html" class="nav-logo">N<span>S</span></a>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#journal">Journal</a></li>
+        <li><a href="index.html#contact" class="cta">Get In Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="journal-page-hero">
+    <div class="container">
+      <a href="index.html#journal" class="back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M13 8H3M7 4l-4 4 4 4"/></svg>
+        Back to Journal
+      </a>
+      <p class="journal-page-company">Doodleblue Innovations</p>
+      <h1 class="journal-page-title">Where React Became Second Nature</h1>
+      <p class="journal-page-period">Oct 2020 — Dec 2022 · Chennai, India</p>
+      <div class="journal-divider"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="journal-body">
+
+      <p>
+        Two years. Five projects. Four clients across three different domains — fashion, fintech,
+        and enterprise HR. This is where I stopped learning React and started really knowing it.
+        The difference is hard to describe until you've crossed it: you stop thinking about
+        how to do things in React and start thinking about what you're building.
+      </p>
+
+      <h3>The Fashion Platform</h3>
+
+      <p>
+        The first major project was an e-commerce platform for a Dubai-based fashion client —
+        clothing rental and outright sales, with merchant dashboards, inventory management,
+        customer storefronts, and analytics. Full stack: React on the frontend, Node.js backend,
+        AWS Lambda for serverless microservices. It went live and reached a 25% increase in
+        order completion rate compared to their previous platform.
+      </p>
+
+      <p>
+        This was also my first serious TypeScript project. TypeScript at first feels like it slows
+        you down — you're writing more, thinking about types you never thought about in JavaScript.
+        But once you're in a codebase of any size with multiple engineers, TypeScript is the difference
+        between refactoring with confidence and refactoring with fear. I never want to work on a large
+        JavaScript codebase without it again.
+      </p>
+
+      <h3>SHL: Interview Scheduling at Scale</h3>
+
+      <p>
+        The second major project was an interview self-scheduling portal for SHL — an enterprise
+        HR and talent assessment company. One portal serving three different user types: recruiters,
+        panellists, and candidates. Each had different permissions and views of the same scheduling data.
+      </p>
+
+      <p>
+        The complexity was in the panel configurations: one-to-one, one-to-many, many-to-many interviews —
+        each requiring different calendar logic and invite automation. GraphQL was the right call here,
+        letting the frontend query exactly the data shape it needed for each view without overloading
+        the API with generic endpoints.
+      </p>
+
+      <h3>NeoGrowth: Fintech Loan Journey</h3>
+
+      <p>
+        NeoGrowth's NeoCash Insta Web was a mobile-first instant loan application journey.
+        The UX had to be frictionless: PAN validation, Aadhaar verification via DIGIO,
+        eligibility checks, and disbursement — all in a flow that felt like a consumer app,
+        not a banking form. UTM campaign tracking and Firebase Analytics for measuring where
+        users dropped off.
+      </p>
+
+      <p>
+        Fintech taught me to think about error states differently. Every step in a financial
+        journey has failure modes that matter: a failed Aadhaar OTP, a PAN that doesn't match,
+        a network drop mid-verification. The user can't just see a generic error — they need
+        to know exactly what happened and what to do next. Clear, precise error handling
+        isn't a nice-to-have in fintech. It's the product.
+      </p>
+
+      <h3>React Native: Mobile Is a Different World</h3>
+
+      <p>
+        The last significant chapter at Doodleblue was building two React Native apps for NeoGrowth:
+        a <strong>SalesApp</strong> for field sales agents and a <strong>Customer App</strong> for loan management.
+        Both shipped to <em>App Store and Play Store</em>.
+      </p>
+
+      <p>
+        Mobile development is genuinely different from web. No browser as a safety net.
+        Platform-specific behaviour that you have to test on real devices. App lifecycle events —
+        backgrounding, foregrounding, push notifications — that don't exist on the web.
+        Camera and secure storage integrations that require native modules. The SalesApp had
+        KYC photo capture, form capture for loan applications, lead assignment, and offline capability
+        in areas with poor connectivity.
+      </p>
+
+      <p>
+        Shipping to the App Store for the first time involves a whole category of work that
+        doesn't exist in web: certificates, provisioning profiles, review guidelines, binary uploads.
+        Getting rejected by App Review once — because of a missing privacy permission string —
+        is the fastest way to learn to read the guidelines carefully.
+      </p>
+
+      <h3>Working in a Multi-Client Studio</h3>
+
+      <p>
+        Two years in a product studio means you see a lot of codebases, a lot of client expectations,
+        and a lot of different ways teams can succeed or fail. I learned Agile done properly:
+        sprint planning that actually sets realistic scope, standups that solve blockers instead
+        of just reporting status, retrospectives where the team is honest.
+      </p>
+
+      <p>
+        More than any specific technology, Doodleblue gave me range. I know what it means to
+        pick up a new domain quickly, understand a client's existing system, and deliver
+        production-ready code without months of ramp-up. That's a skill that compounds.
+      </p>
+
+      <div class="journal-tech-note">
+        <p><strong>Stack:</strong> React · TypeScript · Redux · GraphQL · Next.js · Tailwind CSS · Material UI · React Native · MobX · Firebase · One Signal · AWS Lambda · AWS Amplify</p>
+      </div>
+
+      <div class="journal-footer-nav">
+        <a href="journal-roamhome.html" class="journal-nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M13 8H3M7 4l-4 4 4 4"/></svg>
+          Previous: RoamHome
+        </a>
+        <a href="journal-hilabs.html" class="journal-nav-link">
+          Next: HiLabs
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer style="margin-top: 4rem;">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-copy">© 2025 Noel Sasikanth</span>
+        <a href="index.html" class="footer-copy" style="color:var(--text-faint)">← Back to portfolio</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

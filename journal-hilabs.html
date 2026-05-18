@@ -7,24 +7,18 @@
   <meta name="description" content="AI-native healthtech, two promotions, and the lesson that changes how you build: a POC becomes production faster than you think." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&family=Inter:wght@400;500&family=Syne:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <nav id="nav">
-    <div class="container">
-      <a href="index.html" class="nav-logo">N<span>S</span></a>
-      <div style="display:flex;align-items:center;gap:12px;">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        </button>
-      </div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html#experience">Experience</a></li>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">NS</a>
+      <ul class="nav-links">
+        <li><a href="index.html#work">Work</a></li>
         <li><a href="index.html#journal">Journal</a></li>
-        <li><a href="index.html#contact" class="cta">Get In Touch</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -42,8 +36,51 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container journal-page-body">
     <div class="journal-body">
+
+      <div class="journal-projects-section">
+        <p class="journal-projects-label">Projects</p>
+        <div class="jl-entries">
+          <div class="jl-entry">
+            <p class="jl-entry-title">IQT — Intelligent Query Tool <span class="jl-entry-context">(Contracts AI)</span></p>
+            <p class="jl-entry-desc">RAG + LangChain pipeline on contract PDFs. TIN-based grouping, QnA and Negotiate Assist. Reduced document review time by 40%. Running in production at Elevance.</p>
+            <div class="stack-chips"><span class="chip">LangChain</span><span class="chip">RAG</span><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Node.js</span><span class="chip">SOLR</span></div>
+          </div>
+          <div class="jl-entry">
+            <p class="jl-entry-title">Flask PDF Highlighter API</p>
+            <p class="jl-entry-desc">Python service that takes a PDF and list of strings, returns annotated PDF with precise coordinate highlights and page navigation.</p>
+            <div class="stack-chips"><span class="chip">Flask</span><span class="chip">Python</span><span class="chip">PDF Processing</span></div>
+          </div>
+          <div class="jl-entry">
+            <p class="jl-entry-title">Pricing Configuration</p>
+            <p class="jl-entry-desc">Contract lifecycle visibility: processing status, attribute extraction, chunk evidences. Production at Elevance and Molina.</p>
+            <div class="stack-chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Redux Toolkit</span><span class="chip">Material UI</span></div>
+          </div>
+          <div class="jl-entry">
+            <p class="jl-entry-title">Provider 360 — Infinite Scroll Rewrite</p>
+            <p class="jl-entry-desc">Intersection Observer API at page and accordion level. Rendering time reduced by 45% across Elevance's large clinical datasets.</p>
+            <div class="stack-chips"><span class="chip">React</span><span class="chip">Intersection Observer</span><span class="chip">Performance</span></div>
+          </div>
+          <div class="jl-entry">
+            <p class="jl-entry-title">Micro-Frontend Architecture</p>
+            <p class="jl-entry-desc">Vite Module Federation enabling independent builds and deploys for IQT, Pricing Configuration, and Provider 360.</p>
+            <div class="stack-chips"><span class="chip">Vite</span><span class="chip">Module Federation</span><span class="chip">Micro-frontends</span></div>
+          </div>
+          <div class="jl-entry">
+            <p class="jl-entry-title">PWA Food Ordering Platform</p>
+            <p class="jl-entry-desc">Internal platform replacing a WhatsApp-based ordering process. Automated order compilation and vendor routing. 90% reduction in operational dependency.</p>
+            <div class="stack-chips"><span class="chip">React</span><span class="chip">PWA</span><span class="chip">Node.js</span><span class="chip">AWS Lambda</span><span class="chip">MySQL</span></div>
+          </div>
+          <div class="jl-entry">
+            <p class="jl-entry-title">Elevance HOS Enterprise Dashboard</p>
+            <p class="jl-entry-desc">React dashboard integrating REST APIs to surface AI model performance metrics and clinical data accuracy summaries.</p>
+            <div class="stack-chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">REST APIs</span><span class="chip">Material UI</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="journal-narrative-divider"><span>Full story</span></div>
 
       <p>
         HiLabs solves a specific and unglamorous problem: clinical data accuracy for large US health
@@ -187,13 +224,8 @@
     </div>
   </div>
 
-  <footer style="margin-top: 4rem;">
-    <div class="container">
-      <div class="footer-inner">
-        <span class="footer-copy">© 2025 Noel Sasikanth</span>
-        <a href="index.html" class="footer-copy" style="color:var(--text-faint)">← Back to portfolio</a>
-      </div>
-    </div>
+  <footer>
+    <p class="footer-copy">© 2025 Noel Sasikanth</p>
   </footer>
 
   <script src="script.js"></script>

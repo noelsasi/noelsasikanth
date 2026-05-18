@@ -7,24 +7,18 @@
   <meta name="description" content="My first real codebase. An intern at a startup building software for ROVs that inspect underwater pipelines and ship hulls." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&family=Inter:wght@400;500&family=Syne:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <nav id="nav">
-    <div class="container">
-      <a href="index.html" class="nav-logo">N<span>S</span></a>
-      <div style="display:flex;align-items:center;gap:12px;">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        </button>
-      </div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html#experience">Experience</a></li>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">NS</a>
+      <ul class="nav-links">
+        <li><a href="index.html#work">Work</a></li>
         <li><a href="index.html#journal">Journal</a></li>
-        <li><a href="index.html#contact" class="cta">Get In Touch</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -37,13 +31,31 @@
       </a>
       <p class="journal-page-company">Planys Technologies</p>
       <h1 class="journal-page-title">Where It All Began</h1>
-      <p class="journal-page-period">Dec 2018 — Sept 2019 · Chennai, India</p>
+      <p class="journal-page-period">Dec 2018 — Sep 2019 · Chennai, India</p>
       <div class="journal-divider"></div>
     </div>
   </div>
 
-  <div class="container">
+  <div class="container journal-page-body">
     <div class="journal-body">
+
+      <div class="journal-projects-section">
+        <p class="journal-projects-label">Projects</p>
+        <div class="jl-entries">
+          <div class="jl-entry">
+            <p class="jl-entry-title">WebDesk — Underwater ROV Inspection Platform</p>
+            <p class="jl-entry-desc">Full MVC web platform for ROV inspection campaigns. 35 models, 11 subsystems, 400+ routes. Data hierarchy: Report → Jobs → Days → Dives → Observations → Defects. 70% efficiency improvement in report generation.</p>
+            <div class="stack-chips"><span class="chip">Node.js</span><span class="chip">Express.js</span><span class="chip">PostgreSQL</span><span class="chip">Sequelize</span><span class="chip">Pug</span><span class="chip">Passport.js</span><span class="chip">Bootstrap</span><span class="chip">jQuery</span><span class="chip">Mocha</span></div>
+          </div>
+          <div class="jl-entry">
+            <p class="jl-entry-title">Electron.js Offline Report Generator</p>
+            <p class="jl-entry-desc">Windows executable for field use with no internet. Async video processing via FFmpeg, ImageMagick, and bee-queue job queues. Built for offshore platforms and remote inspection sites.</p>
+            <div class="stack-chips"><span class="chip">Electron.js</span><span class="chip">Node.js</span><span class="chip">FFmpeg</span><span class="chip">ImageMagick</span><span class="chip">bee-queue</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="journal-narrative-divider"><span>Full story</span></div>
 
       <p>
         My first real codebase. Not a tutorial project, not a hackathon, not a toy app with fake data.
@@ -137,13 +149,8 @@
     </div>
   </div>
 
-  <footer style="margin-top: 4rem;">
-    <div class="container">
-      <div class="footer-inner">
-        <span class="footer-copy">© 2025 Noel Sasikanth</span>
-        <a href="index.html" class="footer-copy" style="color:var(--text-faint)">← Back to portfolio</a>
-      </div>
-    </div>
+  <footer>
+    <p class="footer-copy">© 2025 Noel Sasikanth</p>
   </footer>
 
   <script src="script.js"></script>

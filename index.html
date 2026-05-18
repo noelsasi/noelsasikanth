@@ -3,542 +3,331 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Noel Sasikanth — Full Stack Engineer</title>
-  <meta name="description" content="Full Stack Engineer (Web & Mobile) building performant, AI-native and data-intensive product experiences. 7 years across healthtech, fintech, and enterprise." />
-  <meta property="og:title" content="Noel Sasikanth — Full Stack Engineer" />
-  <meta property="og:description" content="Full Stack Engineer building performant, AI-native and data-intensive product experiences." />
-  <meta property="og:type" content="website" />
+  <title>Noel Sasikanth — Frontend Engineer</title>
+  <meta name="description" content="Frontend Engineer building performant, AI-native and data-intensive product experiences. 7 years across healthtech, fintech, and enterprise." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&family=Inter:wght@400;500&family=Syne:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- NAV -->
   <nav id="nav">
-    <div class="container">
-      <a href="#hero" class="nav-logo">N<span>S</span></a>
-      <div style="display:flex;align-items:center;gap:12px;">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          <!-- Moon (shown in dark mode) -->
-          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
-          </svg>
-          <!-- Sun (shown in light mode) -->
-          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-          </svg>
-        </button>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#experience">Experience</a></li>
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">NS</a>
+      <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
         <li><a href="#journal">Journal</a></li>
-        <li><a href="#contact" class="cta">Get In Touch</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- HERO -->
   <section id="hero">
-    <div class="container">
-      <div class="hero-inner">
-        <div class="hero-layout">
-          <div class="hero-text">
-            <p class="hero-eyebrow fade-in">Full Stack Engineer · Web &amp; Mobile</p>
-            <h1 class="hero-headline fade-in">
-              Building <em>performant,<br />AI-native</em> and<br />
-              data-intensive<br />product experiences.
-            </h1>
-            <p class="hero-bio fade-in">
-              7 years across frontend, full stack, mobile, and AI systems.
-              From underwater ROV inspection platforms to AI-powered clinical data tools
-              running in production at US health insurers. I care about engineering depth,
-              clean architecture, and products that actually work.
-            </p>
-            <div class="hero-ctas fade-in">
-              <a href="#experience" class="btn btn-primary">View My Work</a>
-              <a href="#contact" class="btn btn-ghost">Get In Touch</a>
-            </div>
-            <div class="hero-meta fade-in">
-              <span class="hero-meta-item">Bengaluru, India</span>
-              <span class="hero-meta-item" style="color:var(--text-faint)">·</span>
-              <span class="hero-meta-item">7 yrs exp</span>
-              <span class="hero-meta-item" style="color:var(--text-faint)">·</span>
-              <span class="hero-meta-item"><span>React · TypeScript · React Native</span></span>
-            </div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="eyebrow fade-in">Full Stack · Frontend · AI Systems</p>
+          <h1 class="hero-headline fade-in">
+            Building performant,<br />
+            AI-native and data-intensive<br />
+            product experiences.
+          </h1>
+          <p class="hero-bio fade-in">
+            <span class="exp-years" data-from="2018-12">7</span> years across healthtech, fintech, and enterprise.<br />
+            Currently Technical Lead at HiLabs, shipping AI systems to production.
+          </p>
+          <div class="hero-ctas fade-in">
+            <a href="#work" class="btn-outline">View My Work</a>
+            <span class="cta-sep">·</span>
+            <a href="mailto:noelsasikanth@gmail.com" class="btn-text">noelsasikanth@gmail.com ↗</a>
+            <span class="cta-sep">·</span>
+            <a href="Noel_Sasikanth_Resume_Frontend.pdf" download class="btn-text">Resume ↓</a>
+            <span class="cta-sep">·</span>
+            <a href="https://github.com/noelsasi" target="_blank" rel="noopener noreferrer" class="btn-text">GitHub ↗</a>
+            <span class="cta-sep">·</span>
+            <a href="https://www.linkedin.com/in/noelsasikanth/" target="_blank" rel="noopener noreferrer" class="btn-text">LinkedIn ↗</a>
           </div>
-          <div class="hero-photo fade-in">
-            <img src="images/profile-pic.JPG" alt="Noel Sasikanth" />
+        </div>
+        <div class="hero-photo fade-in">
+          <img src="images/profile-pic.JPG" alt="Noel Sasikanth" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK HISTORY -->
+  <section id="work">
+    <div class="container">
+      <p class="section-label fade-in">// work history</p>
+
+      <div class="work-entry fade-in">
+        <div class="work-left">
+          <p class="work-period">Feb 2023 — Present</p>
+          <p class="work-location">Bengaluru, India</p>
+          <span class="work-duration" data-from="2023-02"></span>
+        </div>
+        <div class="work-right">
+          <p class="work-company">HiLabs</p>
+          <div class="role-track">
+            <span class="role-track-item">SDE II</span>
+            <span class="role-track-sep">→</span>
+            <span class="role-track-item">Senior Software Engineer</span>
+            <span class="role-track-sep">→</span>
+            <span class="role-track-item current">Technical Lead</span>
+          </div>
+          <p class="work-desc">Built IQT from scratch — LangChain RAG pipeline on contract PDFs running in production at Elevance. Led Pricing Configuration, Vite Module Federation micro-frontend architecture, and rewrote Provider 360 scroll with Intersection Observer for a 45% rendering improvement. Flask PDF Highlighter API used across the platform.</p>
+          <div class="chips">
+            <span class="chip">React</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">Redux Toolkit</span>
+            <span class="chip">Vite</span>
+            <span class="chip">Module Federation</span>
+            <span class="chip">LangChain</span>
+            <span class="chip">RAG</span>
+            <span class="chip">Flask</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">AWS Lambda</span>
+            <span class="chip">SOLR</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-divider"></div>
+
+      <div class="work-entry fade-in">
+        <div class="work-left">
+          <p class="work-period">Oct 2020 — Dec 2022</p>
+          <p class="work-location">Chennai, India</p>
+          <span class="work-duration" data-from="2020-10" data-to="2022-12"></span>
+        </div>
+        <div class="work-right">
+          <p class="work-company">Doodleblue Innovations</p>
+          <div class="role-track">
+            <span class="role-track-item">Software Engineer</span>
+            <span class="role-track-sep">→</span>
+            <span class="role-track-item current">Senior Software Engineer</span>
+          </div>          
+          <p class="work-desc">Built NeoGrowth loan journey (PAN/Aadhaar verification) and SHL interview scheduling portal. Shipped two React Native apps to App Store and Play Store. Architected Node.js + AWS Lambda serverless backend, cutting deployment time by 50%.</p>
+          <div class="chips">
+            <span class="chip">React</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">React Native</span>
+            <span class="chip">GraphQL</span>
+            <span class="chip">Next.js</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">AWS Lambda</span>
+            <span class="chip">AWS Amplify</span>
+            <span class="chip">Firebase</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-divider"></div>
+
+      <div class="work-entry fade-in">
+        <div class="work-left">
+          <p class="work-period">Jan 2020 — Jul 2020</p>
+          <p class="work-location">Goa, India</p>
+          <span class="work-duration" data-from="2020-01" data-to="2020-07"></span>
+        </div>
+        <div class="work-right">
+          <p class="work-company">RoamHome</p>
+          <p class="work-role">Software Engineer</p>
+          <p class="work-desc">Built guest booking platform with Razorpay payments, partner dashboard, and custom OTA calendar consolidating bookings from multiple travel agencies into a unified view. 3 dashboards, 40% reduction in booking management time.</p>
+          <div class="chips">
+            <span class="chip">React</span>
+            <span class="chip">Redux</span>
+            <span class="chip">Razorpay</span>
+            <span class="chip">Ant Design</span>
+            <span class="chip">React Router</span>
+            <span class="chip">SCSS</span>
+            <span class="chip">Google Maps</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-divider"></div>
+
+      <div class="work-entry fade-in">
+        <div class="work-left">
+          <p class="work-period">Dec 2018 — Sep 2019</p>
+          <p class="work-location">Chennai, India</p>
+          <span class="work-duration" data-from="2018-12" data-to="2019-09"></span>
+        </div>
+        <div class="work-right">
+          <p class="work-company">Planys Technologies</p>
+          <p class="work-role">Web Developer Intern</p>
+          <p class="work-desc">Built WebDesk — full MVC platform for underwater ROV inspection, 35 models and 400+ routes. Built Electron.js offline report generator as a Windows executable for field use. Async video processing via FFmpeg and bee-queue job queues.</p>
+          <div class="chips">
+            <span class="chip">Node.js</span>
+            <span class="chip">Express.js</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">Sequelize</span>
+            <span class="chip">Electron.js</span>
+            <span class="chip">FFmpeg</span>
+            <span class="chip">bee-queue</span>
+            <span class="chip">Bootstrap</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="section-divider"></div>
-
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="container">
-      <span class="section-label fade-in">Work History</span>
-
-      <div class="timeline">
-
-        <!-- HiLabs — with promotions -->
-        <div class="company-entry">
-          <div class="company-header">
-            <div class="timeline-left">
-              <p class="timeline-period">Feb 2023<br />— Present</p>
-              <p class="timeline-location">Bengaluru, India</p>
-            </div>
-            <div>
-              <p class="company-name">HiLabs</p>
-              <p class="company-domain">Healthtech AI — clinical data accuracy for US health insurers (Elevance, Molina)</p>
-            </div>
-          </div>
-
-          <!-- Promotion trail -->
-          <div class="promotion-trail">
-            <div class="promo-spine"></div>
-            <div class="promo-roles">
-              <div class="promo-role">
-                <div class="promo-dot current"></div>
-                <div class="promo-role-info">
-                  <p class="promo-role-title">
-                    Technical Lead
-                    <span class="promo-badge">Current</span>
-                  </p>
-                  <p class="promo-note">Leading delivery for enterprise AI tools running in production at Elevance and Molina. Full-stack ownership across frontend and backend.</p>
-                </div>
-              </div>
-              <div class="promo-role">
-                <div class="promo-dot"></div>
-                <div class="promo-role-info">
-                  <p class="promo-role-title">Senior Software Development Engineer</p>
-                  <p class="promo-note">Promoted to lead module ownership across IQT, Pricing Configuration, and micro-frontend architecture work.</p>
-                </div>
-              </div>
-              <div class="promo-role">
-                <div class="promo-dot"></div>
-                <div class="promo-role-info">
-                  <p class="promo-role-title">Senior Software Engineer II</p>
-                  <p class="promo-note">Joined to drive frontend performance improvements and new product features for clinical data platforms.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Detail for current role -->
-          <div class="company-detail">
-            <div></div>
-            <div>
-              <ul class="timeline-bullets">
-                <li>Built IQT from scratch — a Contracts AI tool with RAG + LangChain, PDF upload, TIN-based grouping, QnA and Negotiate Assist. Reduced document review time by 40%. Running in production at Elevance.</li>
-                <li>Built Pricing Configuration (PC) from scratch — shows historically ingested contract files, processing status, attributes and chunk evidences. Production at Elevance and Molina.</li>
-                <li>Designed and deployed a PWA food ordering platform using React, Node.js, AWS Lambda and MySQL — cut operational dependency by 90% by replacing manual WhatsApp-based ordering.</li>
-                <li>Revamped Provider 360 performance using Intersection Observer API-based infinite scroll at page and accordion level — reduced rendering time by 45%.</li>
-                <li>Contributed to micro-frontend architecture using Vite Module Federation — enabled independent module releases, eliminated full-app scans before each release.</li>
-                <li>Engineered a high-performance SOLR query builder for large clinical datasets — reduced complex query execution time by 45%.</li>
-                <li>Built a Flask PDF Highlighter API — takes a PDF and list of strings, returns annotated PDF with highlights and navigation.</li>
-                <li>Built the Elevance HOS enterprise dashboard integrating REST APIs and React visualisations to display AI model performance metrics and data summaries.</li>
-                <li>Became full stack on IQT — owning both frontend and backend via AWS Lambda serverless microservices.</li>
-                <li>Set up and tracked OKRs for direct reportees. Mentored junior developers across full-stack delivery and architectural decisions.</li>
-              </ul>
-              <div class="stack-chips">
-                <span class="chip">React</span>
-                <span class="chip">TypeScript</span>
-                <span class="chip">Redux Toolkit</span>
-                <span class="chip">Material UI</span>
-                <span class="chip">Vite</span>
-                <span class="chip">Module Federation</span>
-                <span class="chip">LangChain</span>
-                <span class="chip">RAG</span>
-                <span class="chip">SOLR</span>
-                <span class="chip">Flask</span>
-                <span class="chip">Python</span>
-                <span class="chip">Node.js</span>
-                <span class="chip">AWS Lambda</span>
-                <span class="chip">AWS Amplify</span>
-                <span class="chip">PWA</span>
-                <span class="chip">MySQL</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Doodleblue -->
-        <div class="timeline-entry">
-          <div class="timeline-left">
-            <p class="timeline-period">Oct 2020<br />— Dec 2022</p>
-            <p class="timeline-location">Chennai, India</p>
-          </div>
-          <div class="timeline-right">
-            <p class="timeline-role">Senior Software Engineer</p>
-            <p class="timeline-company">Doodleblue Innovations</p>
-            <p class="timeline-domain">Multi-client product engineering — fashion, fintech, enterprise</p>
-            <ul class="timeline-bullets">
-              <li>Built a fashion e-commerce platform for a Dubai client — clothing rental and sales with merchant dashboard, inventory management, customer storefront, analytics. Resulted in 25% increase in order completion rate.</li>
-              <li>Built SHL interview self-scheduling portal — one portal for recruiters, panellists and candidates with one-to-one, one-to-many, many-to-many panel configurations and calendar invite automation.</li>
-              <li>Built NeoGrowth NeoCash Insta Web — instant loan application journey with PAN validation, Aadhaar/DIGIO verification, mobile-first design, UTM campaign tracking, Firebase Analytics.</li>
-              <li>Built SalesApp React Native mobile app — field sales team app for loan applications, lead assignment, form capture. Shipped to App Store and Play Store.</li>
-              <li>Built Customer mobile app — loan management, EMI payments, agreement and invoice PDF downloads. Increased user engagement by 10% through improved app stability.</li>
-              <li>Reduced deployment time by 50% via AWS Amplify migration. Reduced backend costs by 50% with AWS Lambda serverless microservices.</li>
-            </ul>
-            <div class="stack-chips">
-              <span class="chip">React</span>
-              <span class="chip">TypeScript</span>
-              <span class="chip">Redux</span>
-              <span class="chip">GraphQL</span>
-              <span class="chip">Next.js</span>
-              <span class="chip">Tailwind CSS</span>
-              <span class="chip">Material UI</span>
-              <span class="chip">React Native</span>
-              <span class="chip">MobX</span>
-              <span class="chip">Firebase</span>
-              <span class="chip">One Signal</span>
-              <span class="chip">AWS Lambda</span>
-              <span class="chip">AWS Amplify</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- RoamHome -->
-        <div class="timeline-entry">
-          <div class="timeline-left">
-            <p class="timeline-period">Jan 2020<br />— Jul 2020</p>
-            <p class="timeline-location">Goa, India</p>
-          </div>
-          <div class="timeline-right">
-            <p class="timeline-role">Software Engineer</p>
-            <p class="timeline-company">RoamHome</p>
-            <p class="timeline-domain">Holiday villa rental platform (India-focused, similar to Airbnb)</p>
-            <ul class="timeline-bullets">
-              <li>Built guest-facing web app — search, property listings, booking flow, Razorpay payments, user profiles, post-stay ratings.</li>
-              <li>Built partner dashboard — property management, availability toggling, booking and guest info. Improved operational efficiency by 50%.</li>
-              <li>Built custom OTA calendar component — consolidated bookings from multiple Online Travel Agency services into one unified calendar view. Reduced booking management time by 40%.</li>
-            </ul>
-            <div class="stack-chips">
-              <span class="chip">React</span>
-              <span class="chip">Redux</span>
-              <span class="chip">Ant Design</span>
-              <span class="chip">React Router</span>
-              <span class="chip">Razorpay</span>
-              <span class="chip">Google Maps</span>
-              <span class="chip">Axios</span>
-              <span class="chip">SCSS</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Planys -->
-        <div class="timeline-entry">
-          <div class="timeline-left">
-            <p class="timeline-period">Dec 2018<br />— Sept 2019</p>
-            <p class="timeline-location">Chennai, India</p>
-          </div>
-          <div class="timeline-right">
-            <p class="timeline-role">Web Developer Intern</p>
-            <p class="timeline-company">Planys Technologies</p>
-            <p class="timeline-domain">Underwater ROV inspection systems — pipelines, ship hulls, dams</p>
-            <ul class="timeline-bullets">
-              <li>Built WebDesk — a full MVC web platform for managing entire ROV underwater inspection campaigns. 35 database models, 11 controller subsystems, 400+ routes. Improved report generation efficiency by 70%.</li>
-              <li>Data hierarchy: Report → Jobs → Days → Dives → Observations → Defects.</li>
-              <li>Built Electron.js offline report generator — packaged as an installable Windows executable for remote locations without internet.</li>
-              <li>Implemented async video processing with FFmpeg, ImageMagick and bee-queue async job queues.</li>
-            </ul>
-            <div class="stack-chips">
-              <span class="chip">Node.js</span>
-              <span class="chip">Express.js</span>
-              <span class="chip">PostgreSQL</span>
-              <span class="chip">Sequelize</span>
-              <span class="chip">Pug</span>
-              <span class="chip">Passport.js</span>
-              <span class="chip">Electron.js</span>
-              <span class="chip">FFmpeg</span>
-              <span class="chip">bee-queue</span>
-              <span class="chip">Bootstrap</span>
-              <span class="chip">jQuery</span>
-              <span class="chip">Mocha</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- JOURNAL -->
+  <!-- ENGINEERING JOURNAL -->
   <section id="journal">
     <div class="container">
-      <span class="section-label fade-in">Engineering Journal</span>
+      <div class="journal-header fade-in">
+        <p class="section-label">// engineering journal</p>
+        <p class="journal-subtitle">A record of every system, every team, every lesson.</p>
+      </div>
 
       <div class="journal-grid">
-
-        <a href="journal-planys.html" class="journal-card">
+        <div class="journal-card fade-in">
           <p class="journal-card-company">Planys Technologies</p>
-          <p class="journal-card-period">Dec 2018 — Sept 2019</p>
-          <p class="journal-card-excerpt">
-            My first real codebase. A startup building software for ROVs that go underwater to inspect
-            pipelines and ship hulls. Real hardware. Remote locations. No cloud. They handed me an entire
-            module to build from scratch as an intern — that kind of trust at the start of a career changes you.
-          </p>
-          <span class="journal-card-link">
-            Read entry
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </span>
-        </a>
-
-        <a href="journal-roamhome.html" class="journal-card">
+          <p class="journal-card-period">Dec 2018 — Sep 2019</p>
+          <p class="journal-card-excerpt">My first real codebase — a full MVC platform for underwater ROV inspection campaigns, 35 models and 400+ routes built from scratch. The first time I shipped something with stakes beyond the classroom.</p>
+          <a href="journal-planys.html" class="journal-read-link">Read entry →</a>
+        </div>
+        <div class="journal-card fade-in">
           <p class="journal-card-company">RoamHome</p>
           <p class="journal-card-period">Jan 2020 — Jul 2020</p>
-          <p class="journal-card-excerpt">
-            First proper React product. An Airbnb-style villa rental platform for Indian travel.
-            Three surfaces — guest booking, partner dashboard, and payments. The hardest piece was a
-            custom calendar component that consolidated bookings from multiple OTA services into one unified view.
-          </p>
-          <span class="journal-card-link">
-            Read entry
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </span>
-        </a>
-
-        <a href="journal-doodleblue.html" class="journal-card">
+          <p class="journal-card-excerpt">My first real React product, including a custom OTA calendar no library could handle, consolidating bookings from MakeMyTrip, Airbnb, and Booking.com. Guest platform, partner dashboard, and Razorpay payment flows in 6 months.</p>
+          <a href="journal-roamhome.html" class="journal-read-link">Read entry →</a>
+        </div>
+        <div class="journal-card fade-in">
           <p class="journal-card-company">Doodleblue Innovations</p>
           <p class="journal-card-period">Oct 2020 — Dec 2022</p>
-          <p class="journal-card-excerpt">
-            Two years, five projects, multiple clients and domains. I stopped learning React here and
-            started really knowing it. First encounter with TypeScript, GraphQL, Agile done properly.
-            Then React Native — shipping to App Store and Play Store for the first time.
-          </p>
-          <span class="journal-card-link">
-            Read entry
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </span>
-        </a>
-
-        <a href="journal-hilabs.html" class="journal-card">
+          <p class="journal-card-excerpt">Two years, five projects across fashion, fintech, and enterprise — where TypeScript clicked and React Native shipped to App Store and Play Store for the first time. The studio model taught me to ship production code across any domain.</p>
+          <a href="journal-doodleblue.html" class="journal-read-link">Read entry →</a>
+        </div>
+        <div class="journal-card fade-in">
           <p class="journal-card-company">HiLabs</p>
           <p class="journal-card-period">Feb 2023 — Present</p>
-          <p class="journal-card-excerpt">
-            An AI-native healthtech company solving clinical data accuracy for large US health insurers.
-            I came in as a senior engineer and grew into a technical lead through two promotions.
-            The biggest lesson: how quickly a POC becomes a production system that customers depend on.
-          </p>
-          <span class="journal-card-link">
-            Read entry
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </span>
-        </a>
-
+          <p class="journal-card-excerpt">Built IQT — a LangChain RAG pipeline on contract PDFs now in production at Elevance, cutting document review time by 40%. Two promotions in two years as a POC became a production system faster than expected.</p>
+          <a href="journal-hilabs.html" class="journal-read-link">Read entry →</a>
+        </div>
       </div>
+
+      <p class="journal-coming-soon">Full entries coming soon — currently writing.</p>
     </div>
   </section>
-
-  <div class="section-divider"></div>
 
   <!-- SKILLS -->
   <section id="skills">
     <div class="container">
-      <span class="section-label fade-in">What I Work With</span>
+      <p class="section-label fade-in">// what i work with</p>
 
-      <div class="skills-grid">
-        <div class="skill-group">
-          <span class="skill-category">Languages</span>
-          <div class="skill-chips">
+      <div class="skills-list">
+        <div class="skill-row fade-in">
+          <span class="skill-group-name">Languages</span>
+          <div class="chips">
             <span class="chip">JavaScript</span>
             <span class="chip">TypeScript</span>
             <span class="chip">Python</span>
           </div>
         </div>
-        <div class="skill-group">
-          <span class="skill-category">Frontend</span>
-          <div class="skill-chips">
+        <div class="skill-row fade-in">
+          <span class="skill-group-name">Frontend</span>
+          <div class="chips">
             <span class="chip">React</span>
             <span class="chip">Next.js</span>
-            <span class="chip">Redux</span>
             <span class="chip">Redux Toolkit</span>
             <span class="chip">GraphQL</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <span class="skill-category">Mobile</span>
-          <div class="skill-chips">
-            <span class="chip">React Native</span>
-            <span class="chip">MobX</span>
-            <span class="chip">Offline-first</span>
-            <span class="chip">App Store</span>
-            <span class="chip">Play Store</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <span class="skill-category">Styling</span>
-          <div class="skill-chips">
+            <span class="chip">Vite</span>
             <span class="chip">Tailwind CSS</span>
             <span class="chip">Material UI</span>
-            <span class="chip">Ant Design</span>
-            <span class="chip">SCSS</span>
           </div>
         </div>
-        <div class="skill-group">
-          <span class="skill-category">Backend</span>
-          <div class="skill-chips">
+        <div class="skill-row fade-in">
+          <span class="skill-group-name">Backend &amp; Mobile</span>
+          <div class="chips">
             <span class="chip">Node.js</span>
             <span class="chip">Express.js</span>
             <span class="chip">Flask</span>
+            <span class="chip">React Native</span>
           </div>
         </div>
-        <div class="skill-group">
-          <span class="skill-category">Databases</span>
-          <div class="skill-chips">
-            <span class="chip">PostgreSQL</span>
-            <span class="chip">MongoDB</span>
-            <span class="chip">MySQL</span>
-            <span class="chip">SOLR</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <span class="skill-category">Cloud &amp; Infra</span>
-          <div class="skill-chips">
+        <div class="skill-row fade-in">
+          <span class="skill-group-name">Cloud &amp; Infra</span>
+          <div class="chips">
             <span class="chip">AWS Lambda</span>
             <span class="chip">AWS Amplify</span>
             <span class="chip">Firebase</span>
-            <span class="chip">Serverless</span>
+            <span class="chip">MySQL</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">SOLR</span>
+            <span class="chip">MongoDB</span>
           </div>
         </div>
-        <div class="skill-group">
-          <span class="skill-category">AI / ML</span>
-          <div class="skill-chips">
+        <div class="skill-row fade-in">
+          <span class="skill-group-name">AI/ML</span>
+          <div class="chips">
             <span class="chip">LangChain</span>
             <span class="chip">RAG</span>
+            <span class="chip">Vector Search</span>
+            <span class="chip">Prompt Engineering</span>
           </div>
         </div>
-        <div class="skill-group">
-          <span class="skill-category">Architecture</span>
-          <div class="skill-chips">
+        <div class="skill-row fade-in">
+          <span class="skill-group-name">Architecture</span>
+          <div class="chips">
             <span class="chip">Micro-frontends</span>
-            <span class="chip">Vite Module Federation</span>
+            <span class="chip">Module Federation</span>
+            <span class="chip">Serverless</span>
             <span class="chip">MVC</span>
             <span class="chip">PWA</span>
           </div>
         </div>
-        <div class="skill-group">
-          <span class="skill-category">Tools</span>
-          <div class="skill-chips">
-            <span class="chip">Git</span>
-            <span class="chip">JIRA</span>
-            <span class="chip">Figma</span>
-            <span class="chip">CI/CD</span>
+        <div class="skill-row fade-in">
+          <span class="skill-group-name">AI Co-pilot</span>
+          <div class="chips">
+            <span class="chip">Cursor</span>
+            <span class="chip">Claude</span>
+            <span class="chip">Antigravity</span>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <div class="section-divider"></div>
-
-  <!-- AWARDS / RECOGNITION -->
-  <section id="awards">
-    <div class="container">
-      <span class="section-label fade-in">Recognition</span>
-      <div class="awards-list fade-in">
-        <div class="award-chip">
-          <span class="award-name">Reliable Rock</span>
-          <span class="award-meta">HiLabs · 2025</span>
-        </div>
-        <div class="award-chip">
-          <span class="award-name">UI Trailblazer</span>
-          <span class="award-meta">HiLabs · 2024</span>
-        </div>
-        <div class="award-chip">
-          <span class="award-name">Gold Star Extra Miler</span>
-          <span class="award-meta">HiLabs · 2023</span>
-        </div>
-        <div class="award-chip">
-          <span class="award-name">WEEKEND Winner</span>
-          <span class="award-meta">ZAIO · 2020</span>
-        </div>
-        <div class="award-chip">
-          <span class="award-name">IBM Hackathon Runner-Up</span>
-          <span class="award-meta">Karunya University · 2018</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
 
   <!-- EDUCATION -->
   <section id="education">
     <div class="container">
-      <span class="section-label fade-in">Education</span>
+      <p class="section-label fade-in">// education</p>
 
-      <div class="edu-list">
+      <div class="edu-list fade-in">
         <div class="edu-entry">
-          <div class="edu-period">2022 — 2024</div>
-          <div>
-            <p class="edu-degree">M.Tech — Data Science &amp; Engineering</p>
-            <p class="edu-institution">BITS Pilani</p>
-            <p class="edu-gpa">GPA 7.8 · Machine Learning, Graph Neural Networks, NER</p>
-          </div>
+          <span class="edu-period">2022–2024</span>
+          <span class="edu-detail">M.Tech — Data Science &amp; Engineering · BITS Pilani · GPA 7.8</span>
         </div>
         <div class="edu-entry">
-          <div class="edu-period">2014 — 2018</div>
-          <div>
-            <p class="edu-degree">B.Tech — Computer Science</p>
-            <p class="edu-institution">Karunya University, Coimbatore</p>
-            <p class="edu-gpa">GPA 7.28 · Networks, DBMS, Web &amp; Cloud Computing</p>
-          </div>
+          <span class="edu-period">2014–2018</span>
+          <span class="edu-detail">B.Tech — Computer Science · Karunya University · GPA 7.28</span>
         </div>
       </div>
     </div>
   </section>
-
-  <div class="section-divider"></div>
 
   <!-- CONTACT -->
   <section id="contact">
     <div class="container">
       <div class="contact-inner fade-in">
         <h2 class="contact-heading">Let's Connect</h2>
-        <p class="contact-sub">
-          Open to senior / lead full stack roles, AI-native products, and consulting engagements.
-          Reach out — I reply to every message.
-        </p>
-        <a href="mailto:noelsasikanth@gmail.com" class="contact-email">
-          noelsasikanth@gmail.com
-        </a>
+        <p class="contact-sub">Open to senior frontend, full stack, and AI engineering roles.</p>
+        <a href="mailto:noelsasikanth@gmail.com" class="contact-email-btn">noelsasikanth@gmail.com</a>
+        <a href="Noel_Sasikanth_Resume_Frontend.pdf" download class="resume-download-link">Download Resume ↓</a>
         <div class="social-links">
-          <a href="https://github.com/noelsasi" target="_blank" rel="noopener noreferrer" class="social-link">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-              <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.417 22 12c0-5.523-4.477-10-10-10z"/>
-            </svg>
-            GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/noelsasikanth/" target="_blank" rel="noopener noreferrer" class="social-link">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
-            LinkedIn
-          </a>
+          <a href="https://github.com/noelsasi" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
+          <a href="https://www.linkedin.com/in/noelsasikanth/" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <span class="footer-copy">© 2025 Noel Sasikanth. Built with HTML, CSS &amp; vanilla JS.</span>
-        <button class="footer-back" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Back to top</button>
-      </div>
-    </div>
+    <p class="footer-copy">© 2025 Noel Sasikanth</p>
   </footer>
 
   <script src="script.js"></script>

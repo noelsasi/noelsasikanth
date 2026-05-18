@@ -1,80 +1,56 @@
-// ===== THEME TOGGLE =====
-const html = document.documentElement;
-
-function getSystemTheme() {
-  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-}
-
-function applyTheme(theme) {
-  html.setAttribute('data-theme', theme);
-  localStorage.setItem('theme', theme);
-}
-
-// Init theme: stored preference → system
-const storedTheme = localStorage.getItem('theme');
-applyTheme(storedTheme || getSystemTheme());
-
-document.getElementById('themeToggle').addEventListener('click', () => {
-  const current = html.getAttribute('data-theme');
-  applyTheme(current === 'dark' ? 'light' : 'dark');
-});
-
-// ===== STICKY NAV =====
+// Nav scroll state
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 10);
-}, { passive: true });
-
-// ===== MOBILE NAV TOGGLE =====
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
-
-navToggle.addEventListener('click', () => {
-  const open = navLinks.classList.toggle('open');
-  navToggle.classList.toggle('open', open);
-  navToggle.setAttribute('aria-expanded', open);
+  nav.classList.toggle('scrolled', window.scrollY > 50);
 });
 
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    navToggle.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', false);
-  });
-});
-
-// ===== SCROLL FADE-IN =====
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-
-const targets = document.querySelectorAll(
-  '.fade-in, .timeline-entry, .company-entry, .journal-card, .skill-group, .edu-entry'
+// Fade-in on scroll
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.1 }
 );
 
-targets.forEach((el, i) => {
-  if (
-    el.closest('.timeline') ||
-    el.closest('.journal-grid') ||
-    el.closest('.skills-grid') ||
-    el.closest('.edu-list')
-  ) {
-    el.style.transitionDelay = `${i * 0.04}s`;
-  }
-  observer.observe(el);
+document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+// Years of experience
+document.querySelectorAll('.exp-years[data-from]').forEach((el) => {
+  const [fy, fm] = el.getAttribute('data-from').split('-').map(Number);
+  const now = new Date();
+  const totalMonths = (now.getFullYear() - fy) * 12 + (now.getMonth() + 1 - fm);
+  const years = Math.floor(totalMonths / 12);
+  const remainder = totalMonths % 12;
+  el.textContent = remainder > 0 ? `${years}+` : years;
 });
 
-// Immediately reveal elements already in viewport on load
-document.addEventListener('DOMContentLoaded', () => {
-  targets.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight) {
-      el.classList.add('visible');
+// Duration counters
+document.querySelectorAll('.work-duration[data-from]').forEach((el) => {
+  const [fy, fm] = el.getAttribute('data-from').split('-').map(Number);
+  const toAttr = el.getAttribute('data-to');
+  const end = toAttr ? new Date(+toAttr.split('-')[0], +toAttr.split('-')[1] - 1) : new Date();
+  const totalMonths = (end.getFullYear() - fy) * 12 + (end.getMonth() + 1 - fm);
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
+  const parts = [];
+  if (years > 0) parts.push(`${years} yr${years > 1 ? 's' : ''}`);
+  if (months > 0) parts.push(`${months} mo${months > 1 ? 's' : ''}`);
+  el.textContent = parts.join(' ');
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener('click', (e) => {
+    const id = link.getAttribute('href').slice(1);
+    const target = document.getElementById(id);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
     }
   });
 });

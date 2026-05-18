@@ -929,6 +929,10 @@ footer {
 }
 
 /* ===== JOURNAL PAGE STYLES ===== */
+/* Constrain all journal page containers to a single centered reading column */
+.journal-page-hero .container,
+.journal-page-body.container { max-width: 680px; }
+
 .journal-page-hero {
   padding: calc(var(--nav-h) + var(--space-12)) 0 var(--space-10);
 }
@@ -978,7 +982,7 @@ footer {
   margin: var(--space-6) 0;
 }
 
-.journal-body { max-width: 620px; }
+.journal-body { max-width: 680px; margin: 0 auto; }
 
 .journal-body p {
   font-size: 0.95rem;

@@ -19,26 +19,20 @@
   <nav id="nav">
     <div class="container">
       <a href="#hero" class="nav-logo">N<span>S</span></a>
-      <div style="display:flex;align-items:center;gap:12px;">
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#journal">Journal</a></li>
+          <li><a href="#contact" class="cta">Get In Touch</a></li>
+        </ul>
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          <!-- Moon (shown in dark mode) -->
-          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
-          </svg>
-          <!-- Sun (shown in light mode) -->
-          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-          </svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </button>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#journal">Journal</a></li>
-        <li><a href="#contact" class="cta">Get In Touch</a></li>
-      </ul>
     </div>
   </nav>
 
@@ -50,14 +44,11 @@
           <div class="hero-text">
             <p class="hero-eyebrow fade-in">Full Stack Engineer · Web &amp; Mobile</p>
             <h1 class="hero-headline fade-in">
-              Building <em>performant,<br />AI-native</em> and<br />
-              data-intensive<br />product experiences.
+              Building <em>performant,<br />AI-native</em> and data-intensive<br />product experiences.
             </h1>
             <p class="hero-bio fade-in">
-              7 years across frontend, full stack, mobile, and AI systems.
-              From underwater ROV inspection platforms to AI-powered clinical data tools
-              running in production at US health insurers. I care about engineering depth,
-              clean architecture, and products that actually work.
+              7 years across frontend, full stack, mobile, and AI systems —
+              from underwater ROV platforms to AI-powered clinical tools in production at US health insurers.
             </p>
             <div class="hero-ctas fade-in">
               <a href="#experience" class="btn btn-primary">View My Work</a>
@@ -65,10 +56,12 @@
             </div>
             <div class="hero-meta fade-in">
               <span class="hero-meta-item">Bengaluru, India</span>
-              <span class="hero-meta-item" style="color:var(--text-faint)">·</span>
-              <span class="hero-meta-item">7 yrs exp</span>
-              <span class="hero-meta-item" style="color:var(--text-faint)">·</span>
+              <span class="hero-meta-sep">·</span>
+              <span class="hero-meta-item">7 yrs</span>
+              <span class="hero-meta-sep">·</span>
               <span class="hero-meta-item"><span>Node.js · React · TypeScript · React Native</span></span>
+              <span class="hero-meta-sep">·</span>
+              <span class="hero-meta-item"><span>LangChain · RAG</span></span>
             </div>
           </div>
           <div class="hero-photo fade-in">
@@ -236,61 +229,65 @@
 
         <!-- RoamHome -->
         <div class="timeline-entry">
-          <div class="timeline-left">
-            <p class="timeline-period">Jan 2020<br />— Jul 2020</p>
-            <p class="timeline-location">Goa, India</p>
-          </div>
-          <div class="timeline-right">
-            <p class="timeline-role">Software Engineer</p>
-            <p class="timeline-company">RoamHome</p>
-            <p class="timeline-domain">Holiday villa rental platform (India-focused, similar to Airbnb)</p>
-            <ul class="timeline-bullets">
-              <li>Built guest-facing web app — search, property listings, booking flow, Razorpay payments, user profiles, post-stay ratings.</li>
-              <li>Built partner dashboard — property management, availability toggling, booking and guest info. Improved operational efficiency by 50%.</li>
-              <li>Built custom OTA calendar component — consolidated bookings from multiple Online Travel Agency services into one unified calendar view. Reduced booking management time by 40%.</li>
-            </ul>
-            <div class="stack-chips">
-              <span class="chip">React</span>
-              <span class="chip">Redux</span>
-              <span class="chip">Ant Design</span>
-              <span class="chip">React Router</span>
-              <span class="chip">Razorpay</span>
-              <span class="chip">Google Maps</span>
-              <span class="chip">Axios</span>
-              <span class="chip">SCSS</span>
+          <div class="timeline-entry-inner">
+            <div class="timeline-left">
+              <p class="timeline-period">Jan 2020<br />— Jul 2020</p>
+              <p class="timeline-location">Goa, India</p>
+            </div>
+            <div>
+              <p class="timeline-role">Software Engineer</p>
+              <p class="timeline-company">RoamHome</p>
+              <p class="timeline-domain">Holiday villa rental — property booking platform</p>
+              <ul class="timeline-bullets">
+                <li>Built guest web app — property search, booking flow, Razorpay payments, user profiles, post-stay ratings.</li>
+                <li>Built partner dashboard — property management, availability toggling, booking and guest info. 50% operational efficiency gain.</li>
+                <li>Built custom OTA calendar — consolidated bookings from multiple travel agencies into a unified view. 40% reduction in booking management time.</li>
+              </ul>
+              <div class="stack-chips">
+                <span class="chip">React</span>
+                <span class="chip">Redux</span>
+                <span class="chip">Ant Design</span>
+                <span class="chip">React Router</span>
+                <span class="chip">Razorpay</span>
+                <span class="chip">Google Maps</span>
+                <span class="chip">Axios</span>
+                <span class="chip">SCSS</span>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Planys -->
         <div class="timeline-entry">
-          <div class="timeline-left">
-            <p class="timeline-period">Dec 2018<br />— Sep 2019</p>
-            <p class="timeline-location">Chennai, India</p>
-          </div>
-          <div class="timeline-right">
-            <p class="timeline-role">Web Developer Intern</p>
-            <p class="timeline-company">Planys Technologies</p>
-            <p class="timeline-domain">Underwater ROV inspection systems — pipelines, ship hulls, dams</p>
-            <ul class="timeline-bullets">
-              <li>Built WebDesk — a full MVC web platform for managing entire ROV underwater inspection campaigns. 35 database models, 11 controller subsystems, 400+ routes. Improved report generation efficiency by 70%.</li>
-              <li>Data hierarchy: Report → Jobs → Days → Dives → Observations → Defects.</li>
-              <li>Built Electron.js offline report generator — packaged as an installable Windows executable for remote locations without internet.</li>
-              <li>Implemented async video processing with FFmpeg, ImageMagick and bee-queue async job queues.</li>
-            </ul>
-            <div class="stack-chips">
-              <span class="chip">Node.js</span>
-              <span class="chip">Express.js</span>
-              <span class="chip">PostgreSQL</span>
-              <span class="chip">Sequelize</span>
-              <span class="chip">Pug</span>
-              <span class="chip">Passport.js</span>
-              <span class="chip">Electron.js</span>
-              <span class="chip">FFmpeg</span>
-              <span class="chip">bee-queue</span>
-              <span class="chip">Bootstrap</span>
-              <span class="chip">jQuery</span>
-              <span class="chip">Mocha</span>
+          <div class="timeline-entry-inner">
+            <div class="timeline-left">
+              <p class="timeline-period">Dec 2018<br />— Sep 2019</p>
+              <p class="timeline-location">Chennai, India</p>
+            </div>
+            <div>
+              <p class="timeline-role">Web Developer Intern</p>
+              <p class="timeline-company">Planys Technologies</p>
+              <p class="timeline-domain">Underwater ROV inspection systems — pipelines, ship hulls, dams</p>
+              <ul class="timeline-bullets">
+                <li>Built WebDesk — full MVC platform for ROV inspection campaigns. 35 models, 11 subsystems, 400+ routes. 70% efficiency improvement in report generation.</li>
+                <li>Data hierarchy: Report → Jobs → Days → Dives → Observations → Defects.</li>
+                <li>Built Electron.js offline report generator — Windows executable for field use with no internet.</li>
+                <li>Async video processing via FFmpeg, ImageMagick, and bee-queue job queues.</li>
+              </ul>
+              <div class="stack-chips">
+                <span class="chip">Node.js</span>
+                <span class="chip">Express.js</span>
+                <span class="chip">PostgreSQL</span>
+                <span class="chip">Sequelize</span>
+                <span class="chip">Pug</span>
+                <span class="chip">Passport.js</span>
+                <span class="chip">Electron.js</span>
+                <span class="chip">FFmpeg</span>
+                <span class="chip">bee-queue</span>
+                <span class="chip">Bootstrap</span>
+                <span class="chip">jQuery</span>
+                <span class="chip">Mocha</span>
+              </div>
             </div>
           </div>
         </div>
@@ -377,19 +374,11 @@
 
       <div class="skills-grid">
         <div class="skill-group">
-          <span class="skill-category">Languages</span>
-          <div class="skill-chips">
-            <span class="chip">JavaScript</span>
-            <span class="chip">TypeScript</span>
-            <span class="chip">Python</span>
-          </div>
-        </div>
-        <div class="skill-group">
           <span class="skill-category">Frontend</span>
           <div class="skill-chips">
             <span class="chip">React</span>
             <span class="chip">Next.js</span>
-            <span class="chip">Redux</span>
+            <span class="chip">TypeScript</span>
             <span class="chip">Redux Toolkit</span>
             <span class="chip">GraphQL</span>
           </div>
@@ -401,16 +390,6 @@
             <span class="chip">MobX</span>
             <span class="chip">iOS</span>
             <span class="chip">Android</span>
-            <span class="chip">Push Notifications</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <span class="skill-category">Styling</span>
-          <div class="skill-chips">
-            <span class="chip">Tailwind CSS</span>
-            <span class="chip">Material UI</span>
-            <span class="chip">Ant Design</span>
-            <span class="chip">SCSS</span>
           </div>
         </div>
         <div class="skill-group">
@@ -419,14 +398,16 @@
             <span class="chip">Node.js</span>
             <span class="chip">Express.js</span>
             <span class="chip">Flask</span>
+            <span class="chip">Python</span>
+            <span class="chip">REST APIs</span>
           </div>
         </div>
         <div class="skill-group">
           <span class="skill-category">Databases</span>
           <div class="skill-chips">
             <span class="chip">PostgreSQL</span>
-            <span class="chip">MongoDB</span>
             <span class="chip">MySQL</span>
+            <span class="chip">MongoDB</span>
             <span class="chip">SOLR</span>
           </div>
         </div>
@@ -436,13 +417,17 @@
             <span class="chip">AWS Lambda</span>
             <span class="chip">AWS Amplify</span>
             <span class="chip">Firebase</span>
+            <span class="chip">Serverless</span>
+            <span class="chip">CI/CD</span>
           </div>
         </div>
         <div class="skill-group">
-          <span class="skill-category">AI / ML</span>
+          <span class="skill-category">AI / LLM</span>
           <div class="skill-chips">
             <span class="chip">LangChain</span>
             <span class="chip">RAG</span>
+            <span class="chip">Vector Search</span>
+            <span class="chip">Prompt Engineering</span>
           </div>
         </div>
         <div class="skill-group">
@@ -451,18 +436,26 @@
             <span class="chip">Micro-frontends</span>
             <span class="chip">Vite Module Federation</span>
             <span class="chip">Serverless Microservices</span>
-            <span class="chip">REST APIs</span>
             <span class="chip">MVC</span>
             <span class="chip">PWA</span>
           </div>
         </div>
         <div class="skill-group">
-          <span class="skill-category">Tools</span>
+          <span class="skill-category">AI Coding</span>
           <div class="skill-chips">
-            <span class="chip">Git</span>
-            <span class="chip">JIRA</span>
+            <span class="chip">Cursor</span>
+            <span class="chip">Claude Code</span>
+            <span class="chip">Antigravity</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <span class="skill-category">UI &amp; Tooling</span>
+          <div class="skill-chips">
+            <span class="chip">Tailwind CSS</span>
+            <span class="chip">Material UI</span>
+            <span class="chip">Ant Design</span>
+            <span class="chip">SCSS</span>
             <span class="chip">Figma</span>
-            <span class="chip">CI/CD</span>
           </div>
         </div>
       </div>

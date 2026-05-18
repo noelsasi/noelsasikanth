@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stepping Into React — RoamHome · Noel Sasikanth</title>
+  <meta name="description" content="My first real React product. An Airbnb-style villa rental platform and the custom OTA calendar that made me think differently about UI problems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="container">
+      <a href="index.html" class="nav-logo">N<span>S</span></a>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#journal">Journal</a></li>
+        <li><a href="index.html#contact" class="cta">Get In Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="journal-page-hero">
+    <div class="container">
+      <a href="index.html#journal" class="back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M13 8H3M7 4l-4 4 4 4"/></svg>
+        Back to Journal
+      </a>
+      <p class="journal-page-company">RoamHome</p>
+      <h1 class="journal-page-title">Stepping Into React</h1>
+      <p class="journal-page-period">Jan 2020 — Jul 2020 · Goa, India</p>
+      <div class="journal-divider"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="journal-body">
+
+      <p>
+        Coming from server-rendered Pug templates at Planys, React felt like a different planet.
+        No full page reloads. State that lives in components. Re-renders that happen automatically
+        when data changes. The mental model shift takes a while — and the best way to make it stick
+        is to build something real with real users.
+      </p>
+
+      <p>
+        RoamHome was an early-stage holiday villa rental platform, India-focused, similar to Airbnb
+        in scope. Three distinct surfaces: a guest-facing booking app, a partner dashboard for
+        property owners, and payment flows via Razorpay. I built all three.
+      </p>
+
+      <h3>The Booking App</h3>
+
+      <p>
+        The guest side was standard enough: property search with filters, listing pages,
+        availability checks, a booking funnel, Razorpay payment integration, user profiles,
+        and post-stay ratings. Good practice for state management across multiple steps.
+        Redux for the first time — and immediately realising that global state has to be
+        structured carefully or it becomes noise you can't read.
+      </p>
+
+      <p>
+        I used <strong>Ant Design</strong> for UI components, React Router for navigation,
+        Google Maps for property locations, and Axios for API calls. The guest app was mobile-first
+        by necessity — most bookings happen on phones.
+      </p>
+
+      <h3>The OTA Calendar Problem</h3>
+
+      <p>
+        The partner dashboard was where the interesting engineering happened.
+        Property owners on RoamHome didn't list exclusively here — they were also on MakeMyTrip,
+        Airbnb, Booking.com, and other Online Travel Agencies simultaneously.
+        Bookings from all those platforms needed to show up in one calendar.
+      </p>
+
+      <p>
+        This is a genuinely hard UI problem: you have bookings with different sources, statuses,
+        overlapping date ranges, colour coding per OTA, and a partner who needs to quickly see
+        what's blocked, what's pending, and what's available — all in one view, without switching tabs.
+      </p>
+
+      <p>
+        I built a custom calendar component from scratch. No library — none of the off-the-shelf
+        calendar components handled multi-source booking data at this level of density.
+        It had to consolidate ranges from different OTAs, handle partial-day overlaps,
+        render availability clearly, and update in near-real-time as new bookings came in.
+        This reduced booking management time for property owners by 40%.
+      </p>
+
+      <p>
+        That component taught me something important: <strong>sometimes the right answer is to build it yourself.</strong>
+        Not because it's more impressive, but because the problem is specific enough that a general
+        library will either not fit or require more customisation than writing from scratch.
+      </p>
+
+      <h3>Short Engagement, Real Lessons</h3>
+
+      <p>
+        RoamHome was a short engagement — January to July 2020. The pandemic disrupted travel
+        and the business with it. But the engineering work was real, and the problems were the kind
+        that don't appear in tutorials: multi-source data synchronisation, property owner workflows,
+        payment edge cases.
+      </p>
+
+      <p>
+        It solidified React for me. Not at an expert level yet — but enough to stop fighting the
+        framework and start working with it. That's the inflection point that matters.
+      </p>
+
+      <div class="journal-tech-note">
+        <p><strong>Stack:</strong> React · Redux · Ant Design · React Router · Razorpay · Google Maps · Axios · SCSS</p>
+      </div>
+
+      <div class="journal-footer-nav">
+        <a href="journal-planys.html" class="journal-nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M13 8H3M7 4l-4 4 4 4"/></svg>
+          Previous: Planys
+        </a>
+        <a href="journal-doodleblue.html" class="journal-nav-link">
+          Next: Doodleblue
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer style="margin-top: 4rem;">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-copy">© 2025 Noel Sasikanth</span>
+        <a href="index.html" class="footer-copy" style="color:var(--text-faint)">← Back to portfolio</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

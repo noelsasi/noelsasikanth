@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* ── Dark theme (default) ── */
+  :root, [data-theme="dark"] {
+    --bg: #0d0d12;
+    --surface: #13131a;
+    --border: #1e1e2a;
+    --text-primary: #e8e8f0;
+    --text-secondary: #9090a8;
+    --text-faint: #5a5a72;
+    --accent: #6366f1;
+    --accent-hover: #5254cc;
+    --accent-bg: rgba(99,102,241,0.08);
+    --accent-border: rgba(99,102,241,0.25);
+    --violet: #a78bfa;
+    --violet-bg: rgba(124,58,237,0.10);
+    --violet-border: rgba(124,58,237,0.20);
+    --nav-bg: rgba(13,13,18,0.90);
+  }
+
+  /* ── Light theme ── */
+  [data-theme="light"] {
+    --bg: #f8f8fc;
+    --surface: #ffffff;
+    --border: #e4e4ec;
+    --text-primary: #111118;
+    --text-secondary: #5a5a72;
+    --text-faint: #9090a8;
+    --accent: #4f46e5;
+    --accent-hover: #4338ca;
+    --accent-bg: rgba(79,70,229,0.07);
+    --accent-border: rgba(79,70,229,0.22);
+    --violet: #7c3aed;
+    --violet-bg: rgba(124,58,237,0.07);
+    --violet-border: rgba(124,58,237,0.18);
+    --nav-bg: rgba(248,248,252,0.92);
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: #fff;
+  }
+}

@@ -76,14 +76,14 @@ export const products: Product[] = [
   },
   {
     id: "pdf-intelligence",
-    name: "PDF Document Intelligence",
+    name: "DocuMind",
     description:
-      "Upload any PDF, ask questions in natural language. Semantic search with source highlighting and page navigation.",
+      "Transform documents into actionable intelligence, Upload any PDF, ask questions in natural language. Semantic search with source highlighting and page navigation.",
     stack: ["React", "LangChain", "Vector DB", "Node.js"],
     signal: "Built solo — live, production-grade document QnA.",
     badge: "Solo build · Live",
     badgeVariant: "solo",
-    url: "https://chat.immchurch.com",
+    url: "https://docai.nexavinetech.com",
   },
   {
     id: "voice-ai",

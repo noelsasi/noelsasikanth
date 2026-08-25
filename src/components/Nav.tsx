@@ -1,33 +1,22 @@
 import { Link, useLocation } from 'react-router-dom'
+import { Sun, Moon } from '@phosphor-icons/react'
 import { useTheme } from '../context/ThemeContext'
+import { Action, CONTAINER } from './ui/primitives'
 
 function scrollTo(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 }
 
-function SunIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="5" />
-      <line x1="12" y1="1" x2="12" y2="3" />
-      <line x1="12" y1="21" x2="12" y2="23" />
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-      <line x1="1" y1="12" x2="3" y2="12" />
-      <line x1="21" y1="12" x2="23" y2="12" />
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-    </svg>
-  )
-}
-
-function MoonIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-    </svg>
-  )
-}
+/*
+ * Nav sits at 64px and renders on one line at desktop. Section links collapse
+ * below md; the primary CTA stays visible at every width.
+ */
+const SECTIONS = [
+  { id: 'work', label: 'Work' },
+  { id: 'journal', label: 'Journal' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'skills', label: 'Skills' },
+]
 
 export default function Nav() {
   const { pathname } = useLocation()
@@ -36,45 +25,63 @@ export default function Nav() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-sm"
-      style={{
-        borderColor: 'var(--border)',
-        backgroundColor: 'var(--nav-bg)',
-      }}
+      className="fixed inset-x-0 top-0 z-50 border-b backdrop-blur-md"
+      style={{ borderColor: 'var(--hairline)', backgroundColor: 'var(--nav-bg)' }}
     >
-      <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+      <div className={`${CONTAINER} flex h-16 items-center justify-between gap-6`}>
         <Link
           to="/"
-          className="text-sm font-semibold tracking-wide transition-colors"
-          style={{ color: 'var(--text-primary)' }}
+          className="text-[15px] font-semibold tracking-tight"
+          style={{ color: 'var(--ink)' }}
         >
-          NS
+          Noel Sasikanth
         </Link>
 
-        <div className="flex items-center gap-6 text-sm" style={{ color: 'var(--text-secondary)' }}>
+        <div className="flex items-center gap-1 sm:gap-2">
           {isHome ? (
-            <>
-              <button onClick={() => scrollTo('products')} className="hover:opacity-100 opacity-70 transition-opacity cursor-pointer bg-transparent border-none p-0 text-sm font-normal" style={{ color: 'inherit' }}>Work</button>
-              <button onClick={() => scrollTo('journal')} className="hover:opacity-100 opacity-70 transition-opacity cursor-pointer bg-transparent border-none p-0 text-sm font-normal" style={{ color: 'inherit' }}>Journal</button>
-              <button onClick={() => scrollTo('experience')} className="hover:opacity-100 opacity-70 transition-opacity cursor-pointer bg-transparent border-none p-0 text-sm font-normal" style={{ color: 'inherit' }}>Experience</button>
-              <button onClick={() => scrollTo('skills')} className="hover:opacity-100 opacity-70 transition-opacity cursor-pointer bg-transparent border-none p-0 text-sm font-normal" style={{ color: 'inherit' }}>Skills</button>
-              <button onClick={() => scrollTo('contact')} className="hover:opacity-100 opacity-70 transition-opacity cursor-pointer bg-transparent border-none p-0 text-sm font-normal" style={{ color: 'inherit' }}>Contact</button>
-            </>
+            <div className="hidden items-center gap-1 md:flex">
+              {SECTIONS.map((s) => (
+                <button
+                  key={s.id}
+                  type="button"
+                  onClick={() => scrollTo(s.id)}
+                  className="rounded-pill border-0 bg-transparent px-3 py-2 text-sm font-medium transition-opacity hover:opacity-100"
+                  style={{ color: 'var(--body)', opacity: 0.85 }}
+                >
+                  {s.label}
+                </button>
+              ))}
+            </div>
           ) : (
-            <>
-              <Link to="/" className="hover:opacity-100 opacity-70 transition-opacity" style={{ color: 'inherit' }}>Home</Link>
-              <Link to="/journal" className="hover:opacity-100 opacity-70 transition-opacity" style={{ color: 'inherit' }}>Journal</Link>
-            </>
+            <div className="hidden items-center gap-1 md:flex">
+              <Link
+                to="/"
+                className="rounded-pill px-3 py-2 text-sm font-medium"
+                style={{ color: 'var(--body)' }}
+              >
+                Home
+              </Link>
+              <Link
+                to="/journal"
+                className="rounded-pill px-3 py-2 text-sm font-medium"
+                style={{ color: 'var(--body)' }}
+              >
+                Journal
+              </Link>
+            </div>
           )}
 
           <button
+            type="button"
             onClick={toggle}
-            aria-label="Toggle theme"
-            className="p-1.5 rounded-md transition-colors hover:opacity-100 opacity-60"
-            style={{ color: 'var(--text-secondary)' }}
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+            className="grid h-10 w-10 place-items-center rounded-pill border-0 bg-transparent transition-opacity hover:opacity-70"
+            style={{ color: 'var(--muted)' }}
           >
-            {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+            {theme === 'dark' ? <Sun size={18} weight="regular" /> : <Moon size={18} weight="regular" />}
           </button>
+
+          <Action href="mailto:noelsasikanth@gmail.com">Get in touch</Action>
         </div>
       </div>
     </nav>

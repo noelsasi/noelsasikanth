@@ -1,103 +1,131 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
+import { ArrowUpRight } from '@phosphor-icons/react'
 import { products } from '../data/portfolio'
+import { Chip, SectionHead, CONTAINER } from './ui/primitives'
 
-function Tag({ label }: { label: string }) {
-  return (
-    <span
-      className="inline-block px-2 py-0.5 rounded text-xs border"
-      style={{ backgroundColor: 'var(--surface)', borderColor: 'var(--border)', color: 'var(--text-secondary)' }}
-    >
-      {label}
-    </span>
-  )
-}
+/*
+ * Layout family: full-bleed dark band with an asymmetric bento.
+ * Exactly 4 cells for 4 products: one lead cell spanning 7 columns, three
+ * supporting cells. No empty tiles, no four-equal-cards row.
+ *
+ * The band is the page's first inversion and marks "here is the work".
+ */
 
 export default function Products() {
+  const reduce = useReducedMotion()
+  const [lead, ...rest] = products
+
+  const reveal = (i: number) =>
+    reduce
+      ? {}
+      : {
+          initial: { opacity: 0, y: 24 },
+          whileInView: { opacity: 1, y: 0 },
+          viewport: { once: true, amount: 0.2 },
+          transition: { duration: 0.55, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] as const },
+        }
+
   return (
-    <section id="products" className="py-24 px-6 max-w-5xl mx-auto w-full">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <h2 className="text-2xl md:text-3xl font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>
-          Things I've built
-        </h2>
-        <p className="text-sm mb-12" style={{ color: 'var(--text-faint)' }}>
-          Products I designed, architected, and shipped — most independently.
-        </p>
-      </motion.div>
+    <section id="work" className="py-section" style={{ backgroundColor: 'var(--band)' }}>
+      <div className={CONTAINER}>
+        <motion.div {...reveal(0)}>
+          <SectionHead
+            onBand
+            title="Products I designed, built, and shipped."
+            lede="Four products taken from an empty repository to something people use. Architecture, interface, and deployment all mine."
+          />
+        </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {products.map((product, i) => (
-          <motion.div
-            key={product.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: i * 0.08 }}
-            className="group relative flex flex-col p-5 rounded-xl border transition-all duration-200"
-            style={{ backgroundColor: 'var(--bg)', borderColor: 'var(--border)' }}
-            onMouseEnter={e => {
-              e.currentTarget.style.backgroundColor = 'var(--surface)'
-              e.currentTarget.style.borderColor = 'var(--accent-border)'
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.backgroundColor = 'var(--bg)'
-              e.currentTarget.style.borderColor = 'var(--border)'
-            }}
+        <div className="mt-14 grid grid-cols-1 items-start gap-4 lg:grid-cols-12">
+          {/* Lead cell */}
+          <motion.a
+            {...reveal(1)}
+            href={lead.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex h-full flex-col justify-between rounded-xl p-8 transition-colors lg:col-span-7"
+            style={{ backgroundColor: 'var(--band-elevated)' }}
           >
-            <div className="flex items-start justify-between gap-3 mb-3">
-              <div>
-                <h3
-                  className="text-base font-semibold transition-colors"
-                  style={{ color: 'var(--text-primary)' }}
-                >
-                  {product.name}
-                </h3>
-                <span
-                  className="inline-block mt-1 px-2 py-0.5 rounded text-xs font-medium border"
-                  style={
-                    product.badgeVariant === 'solo'
-                      ? { backgroundColor: 'var(--accent-bg)', color: 'var(--accent)', borderColor: 'var(--accent-border)' }
-                      : { backgroundColor: 'var(--violet-bg)', color: 'var(--violet)', borderColor: 'var(--violet-border)' }
-                  }
-                >
-                  {product.badge}
-                </span>
+            <div>
+              <div className="mb-5 flex items-start justify-between gap-4">
+                <div>
+                  <h3
+                    className="display text-display-sm"
+                    style={{ color: 'var(--on-band)' }}
+                  >
+                    {lead.name}
+                  </h3>
+                  <p className="mt-2 text-xs font-medium" style={{ color: 'var(--on-band-soft)' }}>
+                    {lead.badge}
+                  </p>
+                </div>
+                <ArrowUpRight
+                  size={22}
+                  weight="regular"
+                  className="mt-1 shrink-0 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  style={{ color: 'var(--on-band-soft)' }}
+                />
               </div>
-              {product.url && (
-                <a
-                  href={product.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Visit ${product.name}`}
-                  className="shrink-0 mt-0.5 transition-colors"
-                  style={{ color: 'var(--text-faint)' }}
-                  onMouseEnter={e => (e.currentTarget.style.color = 'var(--accent)')}
-                  onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-faint)')}
-                >
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M1 13L13 1M13 1H5M13 1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
-              )}
+              <p
+                className="max-w-[52ch] text-base leading-relaxed"
+                style={{ color: 'var(--on-band-soft)' }}
+              >
+                {lead.description}
+              </p>
+              <p className="mt-5 max-w-[52ch] text-sm leading-relaxed" style={{ color: 'var(--on-band)' }}>
+                {lead.signal}
+              </p>
             </div>
-
-            <p className="text-sm leading-relaxed mb-4 flex-1" style={{ color: 'var(--text-secondary)' }}>
-              {product.description}
-            </p>
-
-            <p className="text-xs italic leading-relaxed mb-3" style={{ color: 'var(--accent)', opacity: 0.8 }}>
-              {product.signal}
-            </p>
-
-            <div className="flex flex-wrap gap-1.5">
-              {product.stack.map((s) => <Tag key={s} label={s} />)}
+            <div className="mt-8 flex flex-wrap gap-2">
+              {lead.stack.map((s) => (
+                <Chip key={s} label={s} onBand />
+              ))}
             </div>
-          </motion.div>
-        ))}
+          </motion.a>
+
+          {/* Supporting rail. Three cards stacked beside the lead. */}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-5 lg:grid-cols-1">
+          {rest.map((p, i) => (
+            <motion.a
+              {...reveal(i + 2)}
+              key={p.id}
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col rounded-xl p-6 transition-colors"
+              style={{ backgroundColor: 'var(--band-elevated)' }}
+            >
+              <div className="mb-3 flex items-start justify-between gap-3">
+                <div>
+                  <h3 className="text-lg font-semibold" style={{ color: 'var(--on-band)' }}>
+                    {p.name}
+                  </h3>
+                  <p className="mt-1 text-xs" style={{ color: 'var(--on-band-soft)' }}>
+                    {p.badge}
+                  </p>
+                </div>
+                <ArrowUpRight
+                  size={18}
+                  weight="regular"
+                  className="mt-1 shrink-0 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  style={{ color: 'var(--on-band-soft)' }}
+                />
+              </div>
+              <p
+                className="flex-1 text-sm leading-relaxed"
+                style={{ color: 'var(--on-band-soft)' }}
+              >
+                {p.description}
+              </p>
+              <div className="mt-5 flex flex-wrap gap-1.5">
+                {p.stack.slice(0, 3).map((s) => (
+                  <Chip key={s} label={s} onBand />
+                ))}
+              </div>
+            </motion.a>
+          ))}
+          </div>
+        </div>
       </div>
     </section>
   )

@@ -1,110 +1,108 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { experience, education } from '../data/portfolio'
+import { SectionHead, CONTAINER } from './ui/primitives'
+
+/*
+ * Layout family: two-column timeline on white. Role metadata pins left,
+ * highlights run right against a single continuous rule.
+ *
+ * The rule is structural (it organises the chronology), which is the only
+ * justification for a decorative-looking line. No dots on the list items.
+ */
 
 export default function Experience() {
+  const reduce = useReducedMotion()
+
+  const reveal = (i: number) =>
+    reduce
+      ? {}
+      : {
+          initial: { opacity: 0, y: 20 },
+          whileInView: { opacity: 1, y: 0 },
+          viewport: { once: true, amount: 0.25 },
+          transition: { duration: 0.5, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] as const },
+        }
+
   return (
-    <section id="experience" className="py-24 px-6 max-w-5xl mx-auto w-full">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <h2 className="text-2xl md:text-3xl font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>
-          Experience
-        </h2>
-        <p className="text-sm mb-12" style={{ color: 'var(--text-faint)' }}>
-          7+ years across four companies — full-time, shipping production software.
-        </p>
-      </motion.div>
+    <section id="experience" className="py-section" style={{ backgroundColor: 'var(--canvas)' }}>
+      <div className={CONTAINER}>
+        <motion.div {...reveal(0)}>
+          <SectionHead
+            title="Seven years, four companies."
+            lede="Full-time roles shipping production software for insurers, lenders, and offshore inspection teams."
+          />
+        </motion.div>
 
-      {/* Work timeline */}
-      <div className="relative">
-        {/* vertical line */}
-        <div
-          className="absolute left-0 top-2 bottom-2 w-px hidden md:block"
-          style={{ backgroundColor: 'var(--border)' }}
-        />
-
-        <div className="space-y-10">
+        <div className="mt-14 space-y-12">
           {experience.map((job, i) => (
-            <motion.div
+            <motion.article
+              {...reveal(i + 1)}
               key={job.company}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.07 }}
-              className="md:pl-8 relative"
+              className="grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-10"
             >
-              {/* dot */}
-              <div
-                className="absolute left-[-4px] top-1.5 w-2 h-2 rounded-full hidden md:block"
-                style={{ backgroundColor: 'var(--accent)' }}
-              />
-
-              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
-                <div>
-                  <h3 className="text-base font-semibold" style={{ color: 'var(--text-primary)' }}>
-                    {job.role}
-                    <span className="font-normal mx-2" style={{ color: 'var(--text-faint)' }}>at</span>
-                    <span style={{ color: 'var(--accent)' }}>{job.company}</span>
-                  </h3>
-                  <p className="text-xs mt-0.5" style={{ color: 'var(--text-faint)' }}>
-                    {job.location} · {job.type}
-                  </p>
-                </div>
-                <span
-                  className="text-xs font-medium shrink-0 mt-0.5"
-                  style={{ color: 'var(--text-faint)' }}
-                >
+              <div className="md:col-span-4">
+                <h3 className="text-lg font-semibold" style={{ color: 'var(--ink)' }}>
+                  {job.role}
+                </h3>
+                <p className="mt-1 text-base" style={{ color: 'var(--accent)' }}>
+                  {job.company}
+                </p>
+                <p className="numeric mt-2 text-xs" style={{ color: 'var(--muted)' }}>
                   {job.timeline}
-                </span>
+                </p>
+                <p className="mt-0.5 text-xs" style={{ color: 'var(--muted)' }}>
+                  {job.location}, {job.type}
+                </p>
               </div>
 
-              <ul className="space-y-1.5">
-                {job.highlights.map((point, j) => (
-                  <li key={j} className="flex gap-2.5 text-sm" style={{ color: 'var(--text-secondary)' }}>
-                    <span className="mt-1.5 shrink-0 w-1 h-1 rounded-full" style={{ backgroundColor: 'var(--text-faint)' }} />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+              <div
+                className="border-l-0 md:col-span-8 md:border-l md:pl-10"
+                style={{ borderColor: 'var(--hairline)' }}
+              >
+                <ul className="space-y-3">
+                  {job.highlights.map((point, j) => (
+                    <li
+                      key={j}
+                      className="max-w-[68ch] text-[15px] leading-relaxed"
+                      style={{ color: 'var(--body)' }}
+                    >
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.article>
           ))}
         </div>
-      </div>
 
-      {/* Education */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.4 }}
-        className="mt-16 pt-10 border-t"
-        style={{ borderColor: 'var(--border)' }}
-      >
-        <h3 className="text-sm font-semibold uppercase tracking-widest mb-6" style={{ color: 'var(--text-faint)' }}>
-          Education
-        </h3>
-        {education.map((edu) => (
-          <div key={edu.institution} className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
-            <div>
-              <p className="text-base font-semibold" style={{ color: 'var(--text-primary)' }}>
-                {edu.institution}
-              </p>
-              <p className="text-sm mt-0.5" style={{ color: 'var(--text-secondary)' }}>
-                {edu.degree} · {edu.field}
-              </p>
-              <p className="text-xs mt-0.5" style={{ color: 'var(--text-faint)' }}>
-                {edu.location}
-              </p>
+        {/* Education. Same two-column rhythm, lighter weight. */}
+        <motion.div
+          {...reveal(experience.length + 1)}
+          className="mt-16 border-t pt-12"
+          style={{ borderColor: 'var(--hairline)' }}
+        >
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-10">
+            <h3 className="text-lg font-semibold md:col-span-4" style={{ color: 'var(--ink)' }}>
+              Education
+            </h3>
+            <div className="space-y-6 md:col-span-8">
+              {education.map((edu) => (
+                <div key={edu.institution}>
+                  <p className="text-[15px] font-semibold" style={{ color: 'var(--ink)' }}>
+                    {edu.institution}
+                  </p>
+                  <p className="mt-1 text-[15px]" style={{ color: 'var(--body)' }}>
+                    {edu.degree}, {edu.field}
+                  </p>
+                  <p className="numeric mt-1 text-xs" style={{ color: 'var(--muted)' }}>
+                    {edu.timeline}, {edu.location}
+                  </p>
+                </div>
+              ))}
             </div>
-            <span className="text-xs font-medium shrink-0" style={{ color: 'var(--text-faint)' }}>
-              {edu.timeline}
-            </span>
           </div>
-        ))}
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   )
 }

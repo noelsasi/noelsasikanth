@@ -466,11 +466,11 @@ export const experience: ExperienceEntry[] = [
 
 export const education: EducationEntry[] = [
   {
-    institution: "BITS PILANI, Work Integrated Learning Programmes",
+    institution: "BITS PILANI",
     degree: "Masters",
     field: "Data Science & Engineering",
     timeline: "2022 - 2024",
-    location: "Remote",
+    location: "Remote - WILP",
   },
   {
     institution: "Karunya Institute of Technology and Sciences",
